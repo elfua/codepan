@@ -319,7 +319,8 @@
             text: 'OAuth',
             type: 2,
             handler: () => {
-              const loginURL = process.env.NODE_ENV === 'development' ? 'http://localhost:4001/login' : 'https://gh-login.codepan.net/login'
+              const loginURL = 'http://localhost:4001/login'
+              // const loginURL = process.env.NODE_ENV === 'development' ? 'http://localhost:4001/login' : 'https://gh-login.codepan.net/login'
 
               popup(loginURL, 'gh login', 600, 400)
             }

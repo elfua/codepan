@@ -262,10 +262,14 @@ export default {
           }
         )
         const params = {}
-        if (token) {
-          // eslint-disable-next-line camelcase
-          params.access_token = token
-        }
+        // if (token) {
+        //   // eslint-disable-next-line camelcase
+        //   params.access_token = token
+        // }
+        // OUTDATED: new way:
+        //  FROM: https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api
+        // In most cases, you can use Authorization: Bearer or Authorization: token to pass a token.
+        // However, if you are passing a JSON web token (JWT), you must use Authorization: Bearer.
         const shouldUpdateGist = this.canUpdateGist && !saveNew
         const url = `https://api.github.com/gists${
           shouldUpdateGist ?
@@ -276,6 +280,9 @@ export default {
         const { data } = await axios(url, {
           params,
           method,
+          headers: {
+            Authorization: `token ${token}`
+          },
           data: {
             public: false,
             files

@@ -5,7 +5,7 @@
   "description": "Play with JS/CSS/HTML so simple it hurts",
   "details": "CodePan is where people prototype front-end apps, you are free to use it offline anytime anywhere.",
   "main": "src/index.js",
-  "homepage": "https://codepan.net/",
+  "homepage": "https://codepan.xhumanoid.com/",
   "version": "0.1.0",
   "repository": {},
   "scripts": {
@@ -96,7 +96,6 @@
     "reqjs": "^1.0.3",
     "v-tippy": "^1.0.0",
     "vue-feather-icons": "^4.5.0",
-    "vue-ga": "^1.0.0",
     "vue-inline": "^1.0.1",
     "vue-router": "^2.7.0",
     "vue-slim-modal": "^1.0.4",

@@ -41,8 +41,10 @@ fix:    ##  Fix any fixable linting errors
 
 
 serve:    ##  Serve the production build locally for testing
-	yarn global add serve
-	serve -s build
+
+	yarn dev
+	# yarn global add serve
+	# serve -s build
 
 
 setup: install    ##  Ensure all necessary setup is done (install dependencies, etc.)
