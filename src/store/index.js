@@ -29,15 +29,15 @@ const sortPans = ps => {
 
 const emptyPans = () => ({
   js: {
-    code: '',
+    code: localStorage.getItem('codepan:js') || '',
     transformer: 'js'
   },
   css: {
-    code: '',
+    code: localStorage.getItem('codepan:css') || '',
     transformer: 'css'
   },
   html: {
-    code: '',
+    code: localStorage.getItem('codepan:html') || '',
     transformer: 'html'
   }
 })
@@ -67,7 +67,7 @@ const store = new Vuex.Store({
   state: {
     ...emptyPans(),
     logs: [],
-    visiblePans: ['html', 'js', 'output'],
+    visiblePans: JSON.parse(localStorage.getItem('codepan:pans')) || ['html', 'js', 'output', 'console'],
     activePan: 'js',
     autoRun: false,
     githubToken: localStorage.getItem('codepan:gh-token') || '',
